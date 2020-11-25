@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Fira Code', monospace;
+}
+
+.header {
+    width: 100vw;
+    height: 8vh;
+    background-color: firebrick;
+    margin-top: 2vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    box-shadow: 0 0 10px 2px green;
+}
+
+.logo {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2em;
+    margin: 0 1em;
+    color: antiquewhite;
+}
+
+.menu_bar {
+    margin: 0 2em;
+}
+
+.nav_panel {
+    
+}
+
+.nav_panel  a {
+    color: antiquewhite;
+    font-size: 1.2em;
+    text-decoration: none;
+    margin-left: 1em;
+    transition: color .3s linear;
+}
+
+.nav_panel a:hover {
+    color: green;
+}
+
+.main {
+    width: 100vw;
+    height: 60vh;
+    background: black;
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+}
+
+.screen {
+    width: 50%;
+    height: 100%;
+    background: green;
+}
+
+.game_place {
+    
+}
