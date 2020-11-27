@@ -15,10 +15,12 @@ let motion = {
     dy: 0
 }
 
-let pixel = {
-    x: 0,
-    y: 0
+function pixel(x, y) {
+    this.x = x;
+    this.y = y;
 }
+
+let snake = [new pixel(50, 0)];
 
 function getDiff(width, height, coeff) {
     let diff = 0;
@@ -33,6 +35,29 @@ function getDiff(width, height, coeff) {
     return diff;
 }
 
+function grow(num) {
+    let bX = snake[snake.length-1].x;
+    let bY = snake[snake.length-1].y;
+    
+    if(motion.dx != 0) {
+        
+    }
+    else {
+        
+    }
+}
+
+function drawSnake() {
+    context.clearRect(0, 0, width, height);
+    
+    for(p in snake) {
+        context.fillRect(snake[p].x, snake[p].y, diff, diff);
+    }
+}
+
+drawSnake();
+grow();
+/*
 function draw() {
     window.requestAnimationFrame(draw);
     
@@ -54,39 +79,39 @@ function draw() {
         if(pixel.y < (-diff)) pixel.y = height;
 
         context.clearRect(0, 0, width, height);
-
         context.fillRect(pixel.x, pixel.y, diff, diff);
-        
-        console.log(pixel.x);
-        console.log(pixel.y);
     }
 }
 
 function event(event) {
     switch(event.key) {
         case "ArrowUp":
-            if(pixel.x >= 0 && (pixel.x+diff) <= width) {
+            if(pixel.x >= 0 && (pixel.x+diff) <= width && active) {
                 motion.dx = 0;
                 motion.dy = -diff;
             }
         break;
         case "ArrowDown":
-            if(pixel.x >= 0 && (pixel.x+diff) <= width) {
+            if(pixel.x >= 0 && (pixel.x+diff) <= width && active) {
                 motion.dx = 0;
                 motion.dy = diff;
             }
         break;
         case "ArrowLeft":
-            if(pixel.y >= 0 && (pixel.y+diff) <= height) {
+            if(pixel.y >= 0 && (pixel.y+diff) <= height && active) {
                 motion.dx = -diff;
                 motion.dy = 0;
             }
         break;
         case "ArrowRight":
-            if(pixel.y >= 0 && (pixel.y+diff) <= height) {
+            if(pixel.y >= 0 && (pixel.y+diff) <= height && active) {
                 motion.dx = diff;
                 motion.dy = 0;
             }
+        break;
+        case " ":
+            if(active) active = false;
+            else active = true;
         break;
     }
 }
@@ -101,3 +126,4 @@ canvas.onblur = function() {
 
 canvas.focus();
 draw();
+*/
